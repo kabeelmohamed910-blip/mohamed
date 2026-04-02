@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة العقارات الاحترافية</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>منصة العقارات</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#listings">العقارات</a></li>
+                    <li><a href="#favorites" onclick="showFavorites()">المفضلة (<span id="favoritesCount">0</span>)</a></li>
+                    <li><a href="#about">عن المنصة</a></li>
+                    <li><a href="#contact">اتصل بنا</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>ابحث عن عقارك المثالي</h2>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="ابحث عن مدينة أو نوع العقار...">
+                <button id="search-btn">بحث</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="listings" class="listings">
+        <div class="container">
+            <h2>العقارات المتاحة</h2>
+            <div class="filters">
+                <select id="type-filter">
+                    <option value="">جميع الأنواع</option>
+                    <option value="شقة">شقة</option>
+                    <option value="فيلا">فيلا</option>
+                    <option value="منزل">منزل</option>
+                    <option value="مكتب">مكتب</option>
+                </select>
+                <select id="price-filter">
+                    <option value="">جميع الأسعار</option>
+                    <option value="0-500000">أقل من 500,000 ريال</option>
+                    <option value="500000-1000000">500,000 - 1,000,000 ريال</option>
+                    <option value="1000000+">أكثر من 1,000,000 ريال</option>
+                </select>
+            </div>
+            <div id="property-list" class="property-list">
+                <!-- العقارات ستُضاف هنا عبر JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Property Details -->
+    <div id="propertyModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body">
+                <div class="modal-images">
+                    <img id="modalMainImage" class="modal-main-image" src="" alt="Property Image">
+                    <div class="modal-thumbnails" id="modalThumbnails">
+                        <!-- Thumbnails will be added here -->
+                    </div>
+                </div>
+                <div class="modal-details">
+                    <h2 id="modalTitle"></h2>
+                    <p><strong>النوع:</strong> <span id="modalType"></span></p>
+                    <p><strong>الموقع:</strong> <span id="modalLocation"></span></p>
+                    <p><strong>الغرف:</strong> <span id="modalBedrooms"></span> | <strong>الحمامات:</strong> <span id="modalBathrooms"></span></p>
+                    <p><strong>المساحة:</strong> <span id="modalArea"></span> م²</p>
+                    <p class="modal-price" id="modalPrice"></p>
+                    <p id="modalDescription"></p>
+                    <div class="modal-actions">
+                        <a href="tel:+966501234567" class="btn btn-primary">اتصل الآن</a>
+                        <button class="btn btn-secondary" onclick="shareProperty()">مشاركة</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>عن المنصة</h2>
+            <p>منصة العقارات الاحترافية توفر لك أفضل العقارات في المملكة العربية السعودية. نحن نساعدك في العثور على المنزل المثالي بسهولة وأمان.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>اتصل بنا</h2>
+            <form id="contact-form">
+                <input type="text" placeholder="الاسم" required>
+                <input type="email" placeholder="البريد الإلكتروني" required>
+                <textarea placeholder="رسالتك" required></textarea>
+                <button type="submit">إرسال</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 منصة العقارات الاحترافية. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
